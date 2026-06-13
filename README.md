@@ -1,1 +1,187 @@
-# Vehicle-detection
+🚗 Vehicle Detection and Counting using YOLO & OpenCV
+
+📌 Project Overview
+
+This project implements a Vehicle Detection and Counting System using the YOLO (You Only Look Once) object detection algorithm and OpenCV. The system detects vehicles present in an input image, draws bounding boxes around them, and displays the total vehicle count.
+The model identifies different vehicle categories such as cars, buses, trucks, and motorcycles while ignoring irrelevant objects like pedestrians, animals, and traffic signals. 
+
+🎯 Objective
+
+The primary objectives of this project are:
+Detect vehicles in road traffic images.
+Count the total number of detected vehicles.
+Visualize detections using bounding boxes and labels.
+Demonstrate real-time object detection concepts using YOLO.
+
+🛠️ Technologies Used
+
+Technology
+Purpose
+Python
+Programming Language
+OpenCV
+Image Processing & Visualization
+YOLO (You Only Look Once)
+Object Detection Model
+NumPy
+Numerical Operations
+COCO Dataset Labels
+Vehicle Class Identification
+
+📊 Dataset
+
+COCO (Common Objects in Context)
+The project uses the pre-trained YOLO model trained on the COCO dataset.
+Vehicle classes used:
+Car
+Bus
+Truck
+Motorbike
+Ignored classes:
+Person
+Bicycle
+Dog
+Traffic Light
+Other non-vehicle objects
+The COCO dataset contains 80 object categories and is widely used for object detection research.
+
+🔄 Workflow
+
+Step 1: Import Required Libraries
+Load OpenCV, NumPy, and other dependencies.
+Step 2: Load YOLO Model
+Initialize YOLO configuration and weights files.
+Step 3: Load COCO Labels
+Map class IDs to readable object names.
+Step 4: Get Output Layers
+Identify YOLO's output layers for prediction.
+Step 5: Load Input Image
+Read image and extract dimensions.
+Step 6: Preprocess Image
+Resize image to 416 × 416
+Normalize pixel values
+Convert image into blob format
+Step 7: Perform Forward Pass
+Run the image through YOLO for object detection.
+Step 8: Extract Bounding Boxes
+Store:
+Class IDs
+Confidence Scores
+Bounding Box Coordinates
+Step 9: Apply Non-Maximum Suppression (NMS)
+Remove duplicate overlapping detections and keep the best predictions.
+Step 10: Filter Vehicle Classes
+Keep only:
+Car
+Bus
+Truck
+Motorbike
+Step 11: Draw Bounding Boxes
+Display:
+Vehicle Label
+Confidence Score
+Step 12: Count Vehicles
+Calculate total detected vehicles.
+Step 13: Display Output
+Show image with:
+Green bounding boxes
+Vehicle labels
+Total vehicle count. 
+
+📈 Model Performance
+
+Detection Model
+YOLO Pre-trained Model
+Real-time object detection capability
+High detection speed compared to traditional methods
+Performance Characteristics
+Metric
+Observation
+Detection Speed
+Fast
+Accuracy
+High for visible vehicles
+Real-Time Capability
+Yes
+Multiple Vehicle Detection
+Supported
+Occlusion Handling
+Moderate
+Limitations
+Performance may reduce in poor lighting conditions.
+Small or heavily occluded vehicles may be missed.
+Detection quality depends on image resolution.
+
+📏 Evaluation Metrics Used
+
+Since YOLO is an object detection model, the following metrics are commonly used:
+1. Precision
+Measures how many detected vehicles are actually vehicles.
+2. Recall
+Measures how many actual vehicles are detected.
+3. F1-Score
+Harmonic mean of Precision and Recall.
+4. IoU (Intersection over Union)
+Measures overlap between predicted and actual bounding boxes.
+5. mAP (Mean Average Precision)
+Standard metric used to evaluate object detection models.
+
+📂 Project Structure
+
+Plain text
+Vehicle-Detection-YOLO/
+│
+├── yolov3.weights
+├── yolov3.cfg
+├── coco.names
+│
+├── input/
+│   └── vehicle_image.jpg
+│
+├── output/
+│   └── detected_vehicle.jpg
+│
+├── vehicle_detection.py
+│
+├── README.md
+│
+└── requirements.txt
+
+🚀 Future Improvements
+
+Implement real-time vehicle detection using webcam.
+Add vehicle tracking across video frames.
+Estimate vehicle speed.
+Integrate traffic density analysis.
+Deploy as a web application.
+Use YOLOv8 for improved accuracy and speed.
+Add vehicle type statistics dashboard.
+Implement lane-wise vehicle counting.
+
+📚 What I Learned
+
+Through this project, I gained practical knowledge in:
+Computer Vision
+Image preprocessing techniques
+Object detection fundamentals
+Bounding box generation
+Deep Learning
+Working with YOLO architecture
+Confidence score interpretation
+Non-Maximum Suppression (NMS)
+OpenCV
+Image loading and processing
+Drawing bounding boxes
+Displaying detection results
+Data Handling
+Managing COCO class labels
+Filtering specific object classes
+Counting detected objects
+Project Development
+Integrating deep learning models into applications
+Building end-to-end computer vision pipelines
+Evaluating object detection performance
+
+✅ Conclusion
+
+This project successfully demonstrates how YOLO and OpenCV can be combined to perform efficient vehicle detection and counting. The system accurately identifies vehicles, removes duplicate detections using NMS, and provides a clear visual representation of detected vehicles along with the total count, making it useful for traffic monitoring and intelligent transportation applications. 
